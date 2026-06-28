@@ -1,0 +1,6 @@
+{
+  "name": "Marketing Attribution & CRM Analytics Layer",
+  "description": "A light-first, highly polished SaaS operational dashboard linking Shopify orders to lead sources and CRM stages with real-time attribution analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

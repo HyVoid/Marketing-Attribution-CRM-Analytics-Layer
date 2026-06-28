@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-primary: #051C2C;
+  --color-accent: #2251FF;
+  --color-bg: #F5F5F2;
+  --color-muted: #888888;
+  --color-body-text: #051C2C;
+  --color-surface: #FFFFFF;
+  --color-input-bg: #FFFDE7;
+  --color-border: #E8E8E6;
+  --color-positive: #00C853;
+  --color-negative: #D32F2F;
+  --font-heading: 'Georgia', 'EB Garamond', Garamond, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@theme {
+  --font-heading: var(--font-heading);
+  --font-sans: var(--font-body);
+  --color-primary: var(--color-primary);
+  --color-accent: var(--color-accent);
+  --color-bg: var(--color-bg);
+  --color-muted: var(--color-muted);
+  --color-body-text: var(--color-body-text);
+  --color-surface: var(--color-surface);
+  --color-input-bg: var(--color-input-bg);
+  --color-border: var(--color-border);
+  --color-positive: var(--color-positive);
+  --color-negative: var(--color-negative);
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 220ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  
+  .card-lift {
+    transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1.0), box-shadow 250ms ease;
+  }
+  
+  .card-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(5, 28, 44, 0.08);
+  }
+  
+  .clickable-cell {
+    transition: transform 150ms ease, filter 150ms ease;
+  }
+  
+  .clickable-cell:hover {
+    transform: scale(1.04);
+    filter: brightness(1.05);
+    cursor: pointer;
+  }
+
+  .serif-title {
+    font-family: 'Georgia', 'EB Garamond', Garamond, serif;
+    letter-spacing: -0.025em;
+  }
+
+  .table-header {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .data-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(34, 81, 255, 0.1);
+    overflow: hidden;
+  }
+
+  .data-bar-fill {
+    height: 100%;
+    background: var(--color-accent);
+  }
+
+  .insight-block {
+    border-left: 3px solid var(--color-accent);
+    background: rgba(5, 28, 44, 0.04);
+  }
+
+  .editable-cell {
+    background-color: var(--color-input-bg);
+    border: 1px solid transparent;
+    transition: border 0.2s;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-body-text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, select, textarea {
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: var(--color-accent);
+}
